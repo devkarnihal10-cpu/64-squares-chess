@@ -1,0 +1,6 @@
+{
+  "name": "64 Squares",
+  "description": "64 Squares. Infinite Possibilities. The premier destination for chess history, live broadcasts, grandmaster profiles, beginner academy, and legendary games.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
