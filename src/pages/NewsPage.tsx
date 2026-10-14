@@ -18,10 +18,13 @@ export const NewsPage: React.FC = () => {
 
   const categories = [
     'All',
+    'Chess History & Culture',
+    'Strategy & Improvement',
+    'Endgame Mastery',
     'Indian Chess',
     'World Championship',
-    'FIDE Tour',
-    'Event Announcement'
+    'Technology & Analysis',
+    'FIDE Tour'
   ];
 
   const filteredArticles = CHESS_NEWS_ARTICLES.filter(article => {
@@ -43,13 +46,13 @@ export const NewsPage: React.FC = () => {
         <div className="text-center space-y-4 max-w-3xl mx-auto">
           <div className="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-[#d4af37] font-semibold">
             <Newspaper className="w-4 h-4 text-amber-300" />
-            <span>International Chess Journalism</span>
+            <span>Editorial Journal & Dispatches</span>
           </div>
           <h1 className="font-serif-display text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-stone-100">
-            Chess News, Results and Tournaments
+            Chess Articles, Analysis & Tournaments
           </h1>
           <p className="text-sm sm:text-base text-stone-300 leading-relaxed">
-            In-depth coverage of world championships, FIDE Candidates, national Olympiads, rating updates, and tournament schedules across the global chess circuit.
+            Ten comprehensive essays and reports exploring 1,500 years of chess heritage, grandmaster calculation secrets, neural network breakthroughs, endgame principles, and world title clashes.
           </p>
         </div>
 

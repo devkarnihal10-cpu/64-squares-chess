@@ -109,7 +109,7 @@ export interface NewsArticle {
   id: string;
   slug: string;
   title: string;
-  category: 'World Championship' | 'FIDE Tour' | 'Indian Chess' | 'Technology & Analysis' | 'Event Announcement';
+  category: 'World Championship' | 'FIDE Tour' | 'Indian Chess' | 'Technology & Analysis' | 'Event Announcement' | 'Chess History & Culture' | 'Strategy & Improvement' | 'Endgame Mastery';
   date: string;
   author: string;
   readTime: string;

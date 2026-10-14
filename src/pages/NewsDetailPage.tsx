@@ -152,7 +152,7 @@ export const NewsDetailPage: React.FC = () => {
             className="inline-flex items-center gap-2 text-xs font-semibold text-stone-400 hover:text-stone-100 transition-colors"
           >
             <ArrowLeft className="w-3.5 h-3.5" />
-            <span>Back to All News</span>
+            <span>Back to All Articles & News</span>
           </Link>
         </div>
 

@@ -100,18 +100,23 @@ export const PlayersPage: React.FC = () => {
                 </div>
 
                 {/* Player Name and Title */}
-                <div className="space-y-1">
-                  <div className="flex items-center justify-between">
-                    <h3 className="font-serif-display text-2xl font-bold text-stone-100 group-hover:text-[#d4af37] transition-colors">
-                      {player.name}
-                    </h3>
-                    <span className="px-2 py-0.5 rounded text-[11px] font-mono font-bold bg-[#1d2330] text-amber-300 border border-amber-900/40">
-                      {player.title}
-                    </span>
+                <div className="flex items-start gap-3">
+                  <div className="w-10 h-10 rounded-lg bg-[#181d28] border border-[#d4af37]/40 flex items-center justify-center font-serif-display font-bold text-sm text-[#d4af37] shrink-0">
+                    {player.name.split(' ').map(n => n[0]).join('')}
                   </div>
-                  <div className="text-xs font-mono text-stone-400">
-                    Peak Classical Rating: <strong className="text-stone-200">{player.peakRating}</strong>
-                    {player.peakRatingYear && <span className="text-stone-500"> ({player.peakRatingYear})</span>}
+                  <div className="space-y-1 flex-1">
+                    <div className="flex items-center justify-between">
+                      <h3 className="font-serif-display text-xl font-bold text-stone-100 group-hover:text-[#d4af37] transition-colors leading-tight">
+                        {player.name}
+                      </h3>
+                      <span className="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-[#1d2330] text-amber-300 border border-amber-900/40 shrink-0 ml-2">
+                        {player.title}
+                      </span>
+                    </div>
+                    <div className="text-xs font-mono text-stone-400">
+                      Peak Classical: <strong className="text-stone-200">{player.peakRating}</strong>
+                      {player.peakRatingYear && <span className="text-stone-500"> ({player.peakRatingYear})</span>}
+                    </div>
                   </div>
                 </div>
 

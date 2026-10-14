@@ -5,6 +5,7 @@ import {
   CHESS_HISTORY_SOURCES 
 } from '../data/historyData';
 import { ScrollText, BookOpen, Clock, ShieldCheck, HelpCircle } from 'lucide-react';
+import { ChessImage } from '../components/common/ChessImage';
 
 export const HistoryPage: React.FC = () => {
   const [selectedEra, setSelectedEra] = useState<string>('All');
@@ -42,11 +43,12 @@ export const HistoryPage: React.FC = () => {
 
         {/* Featured Historical Artifact Image */}
         <div className="rounded-xl overflow-hidden border border-stone-800 shadow-2xl bg-[#141822]">
-          <img
-            src="/src/assets/images/chaturanga_history_1791989053518.jpg"
+          <ChessImage
+            src="/assets/images/chaturanga_history.jpg"
             alt="Historical museum archive of ancient Indian Chaturanga and Persian Shatranj artifacts"
+            fallbackTitle="Ancient Indian Chaturanga & Persian Shatranj"
+            theme="history"
             className="w-full h-72 sm:h-96 object-cover brightness-90"
-            referrerPolicy="no-referrer"
           />
           <div className="p-4 sm:p-5 bg-[#12161f] border-t border-stone-800 flex flex-col sm:flex-row sm:items-center justify-between text-xs text-stone-400 gap-2">
             <div>

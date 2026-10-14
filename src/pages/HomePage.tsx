@@ -18,6 +18,7 @@ import { CHESS_HISTORY_EVENTS } from '../data/historyData';
 import { CHESS_LEARN_MODULES } from '../data/learningData';
 import { VERIFIED_TOURNAMENT_BROADCASTS } from '../services/liveChessService';
 import { InteractiveBoard } from '../components/chess/InteractiveBoard';
+import { ChessImage } from '../components/common/ChessImage';
 
 export const HomePage: React.FC = () => {
   const featuredPlayers = CHESS_PLAYERS.slice(0, 4);
@@ -109,11 +110,12 @@ export const HomePage: React.FC = () => {
             {/* Right Column: Hero Visual Board & Showcase */}
             <div className="lg:col-span-5 flex flex-col items-center">
               <div className="relative w-full max-w-[460px] rounded-xl overflow-hidden shadow-2xl border border-stone-700/80 bg-[#161a22] group">
-                <img
-                  src="/src/assets/images/chess_hero_board_1791989052760.jpg"
+                <ChessImage
+                  src="/assets/images/chess_hero_board.jpg"
                   alt="Staunton luxury wooden chess set on dark walnut board with dramatic side lighting"
+                  fallbackTitle="Staunton Championship Board"
+                  theme="hero"
                   className="w-full h-64 object-cover brightness-95 group-hover:scale-102 transition-transform duration-500"
-                  referrerPolicy="no-referrer"
                 />
                 <div className="p-5 space-y-3 bg-[#11141b]">
                   <div className="flex items-center justify-between text-xs text-stone-400">
@@ -258,11 +260,12 @@ export const HomePage: React.FC = () => {
 
             <div className="lg:col-span-7">
               <div className="rounded-xl overflow-hidden border border-stone-800 shadow-xl bg-[#141822]">
-                <img
-                  src="/src/assets/images/chaturanga_history_1791989053518.jpg"
+                <ChessImage
+                  src="/assets/images/chaturanga_history.jpg"
                   alt="Ancient Indian Chaturanga and Persian Shatranj historical artifacts and board"
+                  fallbackTitle="Ancient Chaturanga & Shatranj"
+                  theme="history"
                   className="w-full h-64 sm:h-72 object-cover brightness-90"
-                  referrerPolicy="no-referrer"
                 />
                 <div className="p-5 grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs divide-y sm:divide-y-0 sm:divide-x divide-stone-800">
                   <div className="space-y-1">
@@ -359,11 +362,12 @@ export const HomePage: React.FC = () => {
             
             <div className="lg:col-span-6">
               <div className="rounded-xl overflow-hidden border border-stone-800 shadow-xl bg-[#141822]">
-                <img
-                  src="/src/assets/images/chess_academy_study_1791989056671.jpg"
+                <ChessImage
+                  src="/assets/images/chess_academy_study.jpg"
                   alt="Overhead still life of open chess tactics book and study notebook"
+                  fallbackTitle="Grandmaster Study Room"
+                  theme="academy"
                   className="w-full h-64 sm:h-80 object-cover brightness-90"
-                  referrerPolicy="no-referrer"
                 />
                 <div className="p-5 bg-[#12161f]">
                   <span className="text-xs font-mono text-amber-300 uppercase tracking-wider block mb-1">
@@ -430,17 +434,17 @@ export const HomePage: React.FC = () => {
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
             <div>
               <div className="text-xs uppercase tracking-widest text-[#d4af37] font-semibold">
-                Journalism & Reports
+                Journalism & Essays
               </div>
               <h2 className="font-serif-display text-2xl sm:text-3xl font-bold text-stone-100 mt-1">
-                Latest News & Tournament Updates
+                Featured Articles & Analysis
               </h2>
             </div>
             <Link
               to="/news"
               className="inline-flex items-center gap-1 text-xs font-semibold uppercase tracking-wider text-[#d4af37] hover:text-amber-300 transition-colors"
             >
-              <span>View All News Articles</span>
+              <span>Explore All 10 Articles</span>
               <ArrowRight className="w-3.5 h-3.5" />
             </Link>
           </div>

@@ -57,23 +57,32 @@ export const PlayerDetailPage: React.FC = () => {
         {/* Hero Card */}
         <div className="bg-[#141822] border border-stone-800 rounded-2xl p-6 sm:p-10 shadow-xl space-y-6">
           <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-6 border-b border-stone-800 pb-8">
-            <div className="space-y-2">
-              <div className="flex items-center gap-3">
-                <span className="px-2.5 py-1 rounded bg-[#d4af37]/15 border border-[#d4af37]/40 text-[#d4af37] font-mono text-xs font-bold">
-                  {player.title}
+            <div className="flex items-start gap-5">
+              {/* Grandmaster crest avatar */}
+              <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-gradient-to-br from-[#1d2432] via-[#161a22] to-[#0c0e12] border-2 border-[#d4af37]/60 flex items-center justify-center text-[#d4af37] shadow-xl shrink-0">
+                <span className="font-serif-display text-2xl sm:text-3xl font-bold tracking-wider">
+                  {player.name.split(' ').map(n => n[0]).join('')}
                 </span>
-                <span className="text-xs font-mono text-stone-400">{player.country} ({player.countryCode})</span>
-                <span>·</span>
-                <span className="text-xs font-mono text-stone-400">{player.bornYear}{player.diedYear ? ` – ${player.diedYear}` : ''}</span>
               </div>
-              <h1 className="font-serif-display text-3xl sm:text-4xl lg:text-5xl font-bold text-stone-100">
-                {player.name}
-              </h1>
-              {player.fideRank && (
-                <p className="text-xs sm:text-sm font-mono text-amber-300/90 font-medium">
-                  {player.fideRank}
-                </p>
-              )}
+
+              <div className="space-y-1.5">
+                <div className="flex flex-wrap items-center gap-3">
+                  <span className="px-2.5 py-1 rounded bg-[#d4af37]/15 border border-[#d4af37]/40 text-[#d4af37] font-mono text-xs font-bold">
+                    {player.title}
+                  </span>
+                  <span className="text-xs font-mono text-stone-400">{player.country} ({player.countryCode})</span>
+                  <span>·</span>
+                  <span className="text-xs font-mono text-stone-400">{player.bornYear}{player.diedYear ? ` – ${player.diedYear}` : ''}</span>
+                </div>
+                <h1 className="font-serif-display text-3xl sm:text-4xl lg:text-5xl font-bold text-stone-100">
+                  {player.name}
+                </h1>
+                {player.fideRank && (
+                  <p className="text-xs sm:text-sm font-mono text-amber-300/90 font-medium">
+                    {player.fideRank}
+                  </p>
+                )}
+              </div>
             </div>
 
             {/* Peak rating badge box */}
