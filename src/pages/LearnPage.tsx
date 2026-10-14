@@ -10,6 +10,7 @@ import {
   Sparkles,
   RotateCcw
 } from 'lucide-react';
+import { ChessImage } from '../components/common/ChessImage';
 import { CHESS_LEARN_MODULES } from '../data/learningData';
 
 export const LearnPage: React.FC = () => {
@@ -49,6 +50,22 @@ export const LearnPage: React.FC = () => {
           <p className="text-sm sm:text-base text-stone-300 leading-relaxed">
             A comprehensive, step-by-step master course designed for complete beginners and improving amateurs. Interactive boards, tactical puzzles, instant feedback, and grandmaster principles.
           </p>
+        </div>
+
+        {/* Academy Visual Hero Banner */}
+        <div className="relative rounded-2xl overflow-hidden border border-stone-800 shadow-2xl bg-[#141822] max-w-4xl mx-auto group">
+          <ChessImage
+            src="/assets/images/chess_academy_study.jpg"
+            alt="Chess academy textbook study desk with wooden Staunton pieces and handwritten notation"
+            fallbackTitle="64 Squares Chess Academy"
+            theme="academy"
+            className="w-full h-52 sm:h-64 object-cover brightness-90 group-hover:scale-102 transition-transform duration-500"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0c0e12] via-transparent to-transparent pointer-events-none" />
+          <div className="absolute bottom-4 left-6 right-6 flex items-center justify-between text-xs text-stone-300">
+            <span className="font-serif-display font-semibold text-amber-300 text-sm">Interactive Grandmaster Curriculum</span>
+            <span className="hidden sm:inline-block font-mono text-[11px] text-stone-400">8 Modules · Interactive Puzzles · Practice Drills</span>
+          </div>
         </div>
 
         {/* Progress Overview Bar */}

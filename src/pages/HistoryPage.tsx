@@ -6,6 +6,9 @@ import {
 } from '../data/historyData';
 import { ScrollText, BookOpen, Clock, ShieldCheck, HelpCircle } from 'lucide-react';
 import { ChessImage } from '../components/common/ChessImage';
+import { SEOHead } from '../components/seo/SEOHead';
+import { SEOInspector } from '../components/seo/SEOInspector';
+import { SEO_DATA } from '../data/seoData';
 
 export const HistoryPage: React.FC = () => {
   const [selectedEra, setSelectedEra] = useState<string>('All');
@@ -25,6 +28,8 @@ export const HistoryPage: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-[#0c0e12] text-stone-100 py-12">
+      <SEOHead seo={SEO_DATA.history} />
+      <SEOInspector seo={SEO_DATA.history} />
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
         
         {/* Page Header */}

@@ -37,6 +37,8 @@ export default function App() {
             <Route path="/games/:gameId" element={<GameDetailPage />} />
             <Route path="/news" element={<NewsPage />} />
             <Route path="/news/:slug" element={<NewsDetailPage />} />
+            <Route path="/blog" element={<NewsPage />} />
+            <Route path="/blog/:slug" element={<NewsDetailPage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="*" element={<NotFoundPage />} />
           </Routes>

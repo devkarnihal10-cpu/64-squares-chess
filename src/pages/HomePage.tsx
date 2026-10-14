@@ -19,6 +19,9 @@ import { CHESS_LEARN_MODULES } from '../data/learningData';
 import { VERIFIED_TOURNAMENT_BROADCASTS } from '../services/liveChessService';
 import { InteractiveBoard } from '../components/chess/InteractiveBoard';
 import { ChessImage } from '../components/common/ChessImage';
+import { SEOHead } from '../components/seo/SEOHead';
+import { SEOInspector } from '../components/seo/SEOInspector';
+import { SEO_DATA } from '../data/seoData';
 
 export const HomePage: React.FC = () => {
   const featuredPlayers = CHESS_PLAYERS.slice(0, 4);
@@ -28,6 +31,8 @@ export const HomePage: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-[#0c0e12] text-stone-100">
+      <SEOHead seo={SEO_DATA.home} />
+      <SEOInspector seo={SEO_DATA.home} />
       
       {/* HERO SECTION */}
       <section className="relative overflow-hidden border-b border-stone-800 bg-gradient-to-b from-[#131720] via-[#0c0e12] to-[#0c0e12] pt-12 pb-16 lg:pt-20 lg:pb-24">

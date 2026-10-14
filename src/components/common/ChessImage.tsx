@@ -25,6 +25,15 @@ export const ChessImage: React.FC<ChessImageProps> = ({
     return src;
   }, [src]);
 
+  // Compute corresponding webp source if it's a local jpg asset
+  const webpSrc = React.useMemo(() => {
+    if (!normalizedSrc) return '';
+    if (normalizedSrc.endsWith('.jpg') || normalizedSrc.endsWith('.jpeg')) {
+      return normalizedSrc.replace(/\.(jpg|jpeg)$/, '.webp');
+    }
+    return '';
+  }, [normalizedSrc]);
+
   if (hasError || !normalizedSrc) {
     return (
       <div
@@ -80,15 +89,20 @@ export const ChessImage: React.FC<ChessImageProps> = ({
           <div className="w-6 h-6 border-2 border-stone-700 border-t-[#d4af37] rounded-full animate-spin" />
         </div>
       )}
-      <img
-        {...props}
-        src={normalizedSrc}
-        alt={alt}
-        className={`w-full h-full object-cover transition-opacity duration-300 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
-        referrerPolicy="no-referrer"
-        onLoad={() => setIsLoaded(true)}
-        onError={() => setHasError(true)}
-      />
+      <picture className="w-full h-full">
+        {webpSrc && <source srcSet={webpSrc} type="image/webp" />}
+        <img
+          {...props}
+          src={normalizedSrc}
+          alt={alt}
+          loading="lazy"
+          decoding="async"
+          className={`w-full h-full object-cover transition-opacity duration-300 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
+          referrerPolicy="no-referrer"
+          onLoad={() => setIsLoaded(true)}
+          onError={() => setHasError(true)}
+        />
+      </picture>
     </div>
   );
 };

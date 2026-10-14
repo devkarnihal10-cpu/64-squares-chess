@@ -13,7 +13,7 @@ export const Navbar: React.FC = () => {
     { to: '/players', label: 'Players' },
     { to: '/learn', label: 'Learn' },
     { to: '/games', label: 'Games' },
-    { to: '/news', label: 'News' },
+    { to: '/news', label: 'Blog & News' },
     { to: '/about', label: 'About' },
   ];
 

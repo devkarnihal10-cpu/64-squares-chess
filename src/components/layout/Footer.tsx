@@ -60,7 +60,7 @@ export const Footer: React.FC = () => {
                 <Link to="/games" className="hover:text-[#d4af37] transition-colors">Famous Games Archive</Link>
               </li>
               <li>
-                <Link to="/news" className="hover:text-[#d4af37] transition-colors">News & Tournaments</Link>
+                <Link to="/news" className="hover:text-[#d4af37] transition-colors">Blog & Chess Articles</Link>
               </li>
               <li>
                 <Link to="/about" className="hover:text-[#d4af37] transition-colors">About & Editorial</Link>

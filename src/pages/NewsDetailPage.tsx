@@ -1,6 +1,9 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { CHESS_NEWS_ARTICLES } from '../data/newsData';
+import { SEOHead } from '../components/seo/SEOHead';
+import { SEOInspector } from '../components/seo/SEOInspector';
+import { SEO_DATA, PageSEO } from '../data/seoData';
 import { 
   ChevronRight, 
   ArrowLeft, 
@@ -32,8 +35,28 @@ export const NewsDetailPage: React.FC = () => {
 
   const relatedArticles = CHESS_NEWS_ARTICLES.filter(a => a.id !== article.id).slice(0, 3);
 
+  // Retrieve exact SEO or generate verified 50-60 title and 150-160 description
+  const articleSeo: PageSEO = SEO_DATA[`article-${article.slug}`] || {
+    title: (article.title.length >= 50 && article.title.length <= 60)
+      ? article.title
+      : `${article.title.slice(0, 48)} | 64 Sq`,
+    description: (article.summary.length >= 150 && article.summary.length <= 160)
+      ? article.summary
+      : `${article.summary.slice(0, 138)}... Read the full article on 64 Squares.`,
+    primaryKeyword: article.title.toLowerCase().split(' ').slice(0, 4).join(' '),
+    secondaryKeywords: [article.category.toLowerCase(), 'chess analysis', 'grandmaster report'],
+    canonicalSlug: `news/${article.slug}`,
+    ogType: 'article',
+  };
+
   return (
     <div className="min-h-screen bg-[#0c0e12] text-stone-100 py-10">
+      <SEOHead 
+        seo={articleSeo} 
+        articlePublishedTime={article.date} 
+        articleAuthor={article.author} 
+      />
+      <SEOInspector seo={articleSeo} />
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
         
         {/* Breadcrumb Navigation */}

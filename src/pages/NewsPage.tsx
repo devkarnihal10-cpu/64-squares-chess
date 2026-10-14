@@ -11,6 +11,9 @@ import {
   ExternalLink
 } from 'lucide-react';
 import { CHESS_NEWS_ARTICLES, UPCOMING_TOURNAMENTS_SCHEDULE } from '../data/newsData';
+import { SEOHead } from '../components/seo/SEOHead';
+import { SEOInspector } from '../components/seo/SEOInspector';
+import { SEO_DATA } from '../data/seoData';
 
 export const NewsPage: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
@@ -40,6 +43,8 @@ export const NewsPage: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-[#0c0e12] text-stone-100 py-12">
+      <SEOHead seo={SEO_DATA.news} />
+      <SEOInspector seo={SEO_DATA.news} />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         
         {/* Header */}
